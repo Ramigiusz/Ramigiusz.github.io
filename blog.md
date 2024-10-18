@@ -2,5 +2,7 @@
 layout: default
 title: "Blog"
 ---
-
-{% include archive.html title="Posts" %}
+{% if site.show_excerpts %}
+{% else %}
+  {% include archive.html title="Posts" %}
+{% endif %}
