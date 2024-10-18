@@ -1,3 +1,11 @@
+---
+layout: project
+title: "Nazwa Projektu"
+date: 2024-10-18
+description: "Krótki opis projektu."
+categories: [kategoria1, kategoria2]
+---
+
 # SOC Automation Lab
 
 ## Project Introduction
