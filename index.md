@@ -1,13 +1,14 @@
 ---
 layout: page
 title: ""
-
 ---
-I am a dedicated cybersecurity student seeking an entry-level position to kickstart my career.
+
+
 ## Objective
-My journey in computer science has led me to develop a passion for cybersecurity, and I am now eager to join this field, currently aiming to join Security Analyst team as Tier 1 Analyst
+I am a dedicated cybersecurity student seeking an entry-level position to kickstart my career. My journey in computer science has led me to develop a passion for cybersecurity, and I am now eager to join this field, currently aiming to join Security Analyst team as Tier 1 Analyst
 
 ## Skills
+
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
 | SIEM implementation and configuration         | <a href="https://github.com/Ramigiusz/SOC-Automation-Project">SOC Automation Project </a> |
