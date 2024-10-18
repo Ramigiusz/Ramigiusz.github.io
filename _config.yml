@@ -6,6 +6,11 @@ lang: "en"
 excerpt_separator: "\n\n\n"
 date_format: "%d.%m.%Y"
 
+# collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
 # Layout
 
 show_excerpts: false        # show article excerpts on the home page
@@ -33,3 +38,5 @@ comments:
 
 plugins:
  - jekyll-feed
+
+ 
