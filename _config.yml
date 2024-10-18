@@ -4,7 +4,7 @@ description: "Thanks for stopping by! Feel free to connect with me through these
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
-date_format: "%B %d, %Y"
+date_format: "%d.%m.%Y"
 
 # Layout
 
