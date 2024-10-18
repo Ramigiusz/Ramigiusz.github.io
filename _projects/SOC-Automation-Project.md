@@ -6,8 +6,6 @@ description: "This project demonstrates how to automate common SOC tasks using *
 categories: [kategoria1, kategoria2]
 ---
 
-# SOC Automation Lab
-
 ## Project Introduction
 This SOC Automation Lab project is all about setting up a mini Security Operations Center (SOC) at home. Using tools like Wazuh, Shuffle, and TheHive, the goal is to build a SOAR (Security Orchestration, Automation, and Response) system that can automatically detect, analyze, and respond to security threats without needing constant human input. It's a hands-on way to learn how to get different security tools to work together, enrich threat data, and automate responses, making the whole process smoother and more efficient.
 
