@@ -1,8 +1,8 @@
 ---
-layout: project
-title: "Nazwa Projektu"
+layout: post
+title: "SOC Automation Project"
 date: 2024-10-18
-description: "Krótki opis projektu."
+description: "This project demonstrates how to automate common SOC tasks using **Wazuh**, **Shuffle**, and **TheHive** to detect and respond to suspicious activities. It includes workflows for incident detection, alert management, and enriching data through threat intelligence tools."
 categories: [kategoria1, kategoria2]
 ---
 
