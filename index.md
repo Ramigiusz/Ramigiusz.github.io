@@ -11,8 +11,8 @@ I am a dedicated cybersecurity student seeking an entry-level position to kickst
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
-| SIEM implementation and configuration         | <a href=https://ramigiusz.github.io/projects/SOC-Automation-Project/>SOC Automation Project </a> |
-| SOAR setup and automation	|  <a href=https://ramigiusz.github.io/projects/SOC-Automation-Project/>SOC Automation Project </a> |
+| SIEM implementation and configuration         | <a href="https://ramigiusz.github.io/projects/SOC-Automation-Project/">SOC Automation Project </a> |
+| SOAR setup and automation	|  <a href="https://ramigiusz.github.io/projects/SOC-Automation-Project/">SOC Automation Project </a> |
 
 ## Tools
 ### SIEM
