@@ -11,8 +11,8 @@ I am a dedicated cybersecurity student seeking an entry-level position to kickst
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
-| SIEM implementation and configuration         | <a href="https://github.com/Ramigiusz/SOC-Automation-Project">SOC Automation Project </a> |
-| SOAR setup and automation	|  <a href="https://github.com/Ramigiusz/SOC-Automation-Project">SOC Automation Project </a> |
+| SIEM implementation and configuration         | <a href=https://ramigiusz.github.io/projects/SOC-Automation-Project/>SOC Automation Project </a> |
+| SOAR setup and automation	|  <a href=https://ramigiusz.github.io/projects/SOC-Automation-Project/>SOC Automation Project </a> |
 
 ## Tools
 ### SIEM
@@ -32,7 +32,3 @@ I am a dedicated cybersecurity student seeking an entry-level position to kickst
 
 </div>
 [Open to view certificate]
-
-## Projects
-### [SOC Automation Project](https://github.com/Ramigiusz/SOC-Automation-Project)
-This project demonstrates how to automate common SOC tasks using **Wazuh**, **Shuffle**, and **TheHive** to detect and respond to suspicious activities. It includes workflows for incident detection, alert management, and enriching data through threat intelligence tools.
