@@ -15,12 +15,16 @@ I am a dedicated cybersecurity student seeking an entry-level position to kickst
 | SOAR setup and automation	|  <a href="https://ramigiusz.github.io/projects/SOC-Automation-Project/">SOC Automation Project </a> |
 
 ## Tools
+
 ### SIEM
 <img src="https://img.shields.io/badge/-Wazuh-0072B1?style=for-the-badge&logo=wazuh&logoColor=white" /> 
+
 ### SOAR
 <img src="https://img.shields.io/badge/-Shuffle-FF8000?style=for-the-badge&logo=shuffle&logoColor=white" />
+
 ### Incident Response
 <img src="https://img.shields.io/badge/-TheHive-2E8B57?style=for-the-badge&logo=thehive&logoColor=white" />
+
 ## Certifications and Courses
 <div>
 <a href="https://drive.google.com/file/d/1-5C9gu6-QMt2hlpQIFIPrdLjMR1OE1rM/view?usp=drive_link" target="_blank">
