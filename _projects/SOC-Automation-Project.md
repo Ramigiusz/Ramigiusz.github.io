@@ -3,7 +3,6 @@ layout: post
 title: "SOC Automation Project"
 date: 2024-10-18
 description: "This project demonstrates how to automate common SOC tasks using Wazuh, Shuffle, and TheHive to detect and respond to suspicious activities. It includes workflows for incident detection, alert management, and enriching data through threat intelligence tools."
-categories: [kategoria1, kategoria2]
 ---
 
 ## Project Introduction
@@ -640,7 +639,7 @@ This concludes this part of the project. I hope this walkthrough was helpful to 
 ### 8. Stopping SSH Bruteforce Attempts
 This is a bonus section of the project, where we will review and consolidate our knowledge by building a workflow around a new issue on a different agent machine. This will allow us to practice the skills we've learned so far. The goal is to create an automated response to SSH brute force attempts. When such an attempt is detected, an email will be sent to the analyst with details of the attack, asking whether the IP address should be blocked. If the analyst approves, the IP will be automatically blocked.
 
-For this task, we will also need an attacker's machine. I'll use a Kali Linux VM installed on my PC. In the future, we'll configure the Ubuntu Agent Machine to allow all inbound traffic, enabling us to test our SOAR (Security Orchestration, Automation, and Response) setup against real SSH brute force attempts.
+We'll configure the Ubuntu Agent Machine to allow all inbound traffic, enabling us to test our SOAR (Security Orchestration, Automation, and Response) setup against real SSH brute force attempts.
 
 Before we proceed, we will extract the Wazuh API user login and password. These credentials can be found in the wazuh-install-files.tar archive. To extract it, use the following command:
 ```
