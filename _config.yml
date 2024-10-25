@@ -2,5 +2,5 @@ title: Rami Matouk
 description: >
   Welcome to my website where I share my journey in cybersecurity, record my learnings, and explore various topics.
 baseurl: "" # Leave this empty for user pages
-url: "https://Ramigiusz.github.io" # Your GitHub Pages URL
+url: "https://github.com/Ramigiusz" # Your GitHub Pages URL
 theme: jekyll-theme-hacker # You can change the theme later if you like
