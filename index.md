@@ -42,7 +42,6 @@ Check out my blog where I share insights and learning on various topics in cyber
 </a>
 
 </div>
-[Open to view certificate]
 
 ## Projects
 ### [SOC Automation Project](https://ramigiusz.github.io/projects/2024/10/25/my-first-post.html)
