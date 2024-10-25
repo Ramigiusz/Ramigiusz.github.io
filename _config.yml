@@ -3,4 +3,4 @@ description: >
   Welcome to my blog where I share my journey in cybersecurity, record my learnings, and explore various topics.
 baseurl: "" # Leave this empty for user pages
 url: "https://mynick.github.io" # Your GitHub Pages URL
-theme: jekyll-theme-minimal # You can change the theme later if you like
+theme: jekyll-theme-hacker # You can change the theme later if you like
