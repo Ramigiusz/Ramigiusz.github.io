@@ -3,16 +3,17 @@ layout: default
 title: Home
 ---
 
-## About Me
-<a href="https://www.linkedin.com/in/ramimatouk"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+# About Me
 
 ## Objective
 
 Cybersecurity student at the University of Science and Technology in Wrocław, aspiring to become an IT security professional. With a strong foundation in cybersecurity principles actively seeking opportunities to apply skills in real-world environments. Dedicated to continuous learning and skill development to achieve expertise in the IT security field. 
 
+<a href="https://www.linkedin.com/in/ramimatouk"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+
 Check out my blog where I share insights and learning on various topics in cybersecurity.
 
-[View All Posts](/blog)
+[View Blog](/blog)
 
 ## Skills
 
