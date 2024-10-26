@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to build SOC Automation Lab"
+title: "How to build SOC Automation Lab at home"
 author: "Rami Matouk"
 date: 2024-9-25
 categories: projects
