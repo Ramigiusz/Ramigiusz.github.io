@@ -21,20 +21,16 @@ Nmap is an open-source network scanner that has been in development since 1997. 
 1. [How to Effectively Discover Live Hosts with Nmap](#1-how-to-effectively-discover-live-hosts-with-nmap)  
    1.1 [Local Network Scan vs. Remote Network Scan](#11-local-network-scan-vs-remote-network-scan)  
    1.2 [Scanning Range Specifications](#12-scanning-ip-range-specifications)  
-
 2. [Port Scanning with Nmap](#2-port-scanning-with-nmap)  
    2.1 [SYN Scan](#21-syn-scan)  
    2.2 [Connect Scan](#22-connect-scan)  
    2.3 [UDP Scan](#23-udp-scan)  
    2.4 [Scanning Port Range Specifications](#24-scanning-port-range-specifications)  
-
 3. [Extracting Additional Information with Nmap](#3-extracting-additional-information-with-nmap)  
-
 4. [Controlling Nmap Scanning Speed](#4-controlling-nmap-scanning-speed)  
-
 5. [When You Need More Detail](#5-when-you-need-more-detail)  
-
-6. [Conclusion](#6-conclusion)  
+6. [Conclusion](#6-conclusion)
+7. [Cheatsheet](#cheatsheet)
 
 
 ## 1. How to Effectively Discover Live Hosts with Nmap?
