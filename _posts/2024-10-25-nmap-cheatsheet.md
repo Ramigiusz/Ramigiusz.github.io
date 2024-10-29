@@ -128,6 +128,7 @@ For the best experience with Nmap, it’s recommended to run it with elevated pr
 I hope this guide helps you get started with Nmap and explore its capabilities. This is my first post on Nmap, and I look forward to sharing more as I continue to learn about this versatile tool!
 
 # Cheatsheet
+
 | **Option**                           | **Explanation**                                                                                  |
 |--------------------------------------|--------------------------------------------------------------------------------------------------|
 | **-sL**                              | List scan – lists targets without scanning                                                       |
