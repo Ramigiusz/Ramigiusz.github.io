@@ -102,6 +102,7 @@ Nmap offers control over scan speed, which is critical for penetration testers a
 - `T3` - normal
 - `T4` - aggressive
 - `T5` - insane
+
 For instance, `-T0` makes Nmap wait 5 minutes between each port probe, while `-T2` only pauses for 0.4 seconds.
 
 You can also adjust scan speed with parallel service probes, using `--min-parallelism <num>` and `--max-parallelism <num>`. These settings define the minimum and maximum number of probes sent in parallel. By default, Nmap adjusts this automatically, but for stable connections, it can run hundreds of probes simultaneously.
