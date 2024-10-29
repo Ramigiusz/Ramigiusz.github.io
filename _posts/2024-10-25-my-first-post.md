@@ -4,6 +4,7 @@ title: "How to build SOC Automation Lab at home"
 author: "Rami Matouk"
 date: 2024-10-25
 categories: projects
+tags: [SOC, SOAR, SIEM, cybersecurity]
 ---
 
 # SOC Automation Lab
