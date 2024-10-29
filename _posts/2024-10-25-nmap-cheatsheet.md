@@ -4,6 +4,7 @@ title: "Nmap for begineers + Cheatsheet"
 author: "Rami Matouk"
 date: 2024-10-29
 categories: guides
+tags: [Nmap, cybersecurity, networking]
 ---
 
 
