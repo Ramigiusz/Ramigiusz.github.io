@@ -133,8 +133,10 @@ I hope this guide helps you get started with Nmap and explore its capabilities. 
 |--------------------------------------|--------------------------------------------------------------------------------------------------|
 | **-sL**                              | List scan – lists targets without scanning                                                       |
 | **Host Discovery**                   |                                                                                                  |
+|--------------------------------------|--------------------------------------------------------------------------------------------------|
 | -sn                                  | Ping scan – host discovery only                                                                  |
 | **Port Scanning**                    |                                                                                                  |
+|--------------------------------------|--------------------------------------------------------------------------------------------------|
 | -sT                                  | TCP connect scan – completes the three-way handshake                                             |
 | -sS                                  | TCP SYN scan – only the first step of the three-way handshake                                    |
 | -sU                                  | UDP scan                                                                                         |
@@ -142,10 +144,12 @@ I hope this guide helps you get started with Nmap and explore its capabilities. 
 | -p[range]                            | Specifies a range of port numbers (e.g., -p10-1024) – `-p-` scans all ports                      |
 | -Pn                                  | Treats all hosts as online – scans hosts that appear to be down                                  |
 | **Service Detection**                |                                                                                                  |
+|--------------------------------------|--------------------------------------------------------------------------------------------------|
 | -O                                   | OS detection                                                                                     |
 | -sV                                  | Service version detection                                                                        |
 | -A                                   | OS detection, version detection, and other advanced features                                     |
 | **Timing**                           |                                                                                                  |
+|--------------------------------------|--------------------------------------------------------------------------------------------------|
 | -T<0-5>                              | Timing template – paranoid (0), sneaky (1), polite (2), normal (3), aggressive (4), insane (5)   |
 | --min-parallelism <numprobes>        | Minimum number of parallel probes                                                                |
 | --max-parallelism <numprobes>        | Maximum number of parallel probes                                                                |
@@ -153,9 +157,11 @@ I hope this guide helps you get started with Nmap and explore its capabilities. 
 | --max-rate <number>                  | Maximum rate (packets/second)                                                                    |
 | --host-timeout                       | Maximum time to wait for a target host                                                           |
 | **Real-time Output**                 |                                                                                                  |
+|--------------------------------------|--------------------------------------------------------------------------------------------------|
 | -v                                   | Verbosity level – e.g., `-vv` and `-v4`                                                          |
 | -d                                   | Debugging level – e.g., `-d` and `-d9`                                                           |
 | **Report**                           |                                                                                                  |
+|--------------------------------------|--------------------------------------------------------------------------------------------------|
 | -oN <filename>                       | Normal output                                                                                    |
 | -oX <filename>                       | XML output                                                                                       |
 | -oG <filename>                       | Grep-able output                                                                                 |
