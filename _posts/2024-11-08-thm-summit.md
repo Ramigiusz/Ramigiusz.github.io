@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TryHackMe "Summit" Challenge - Walkthrough"
+title: "TryHackMe 'Summit' Challenge - Walkthrough"
 author: "Rami Matouk"
 date: 2024-11-08
 categories: guides
