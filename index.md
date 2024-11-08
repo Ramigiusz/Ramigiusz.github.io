@@ -11,9 +11,9 @@ Cybersecurity student at the University of Science and Technology in Wrocław, a
 
 <a href="https://www.linkedin.com/in/ramimatouk"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
-Check out my blog where I share insights and learning on various topics in cybersecurity.
+Check out my blog or resources where I share insights and learning on various topics in cybersecurity.
 
-[View Blog](/blog)
+[View Blog](/blog)            [View resources](/resources)
 
 ## Skills
 
