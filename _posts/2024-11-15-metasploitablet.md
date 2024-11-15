@@ -2,7 +2,7 @@
 layout: post
 title: "Hacking Metasploitable 2 Machine with Metasploit"
 author: "Rami Matouk"
-date: 2024-10-25
+date: 2024-11-15
 categories: projects
 tags: [Metasploit, Red Team]
 ---
