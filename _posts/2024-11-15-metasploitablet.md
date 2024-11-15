@@ -84,7 +84,7 @@ Start by searching for a module that can identify service versions. For example,
 We see that the target is running vsFTPd 2.3.4. Next, we search for any known vulnerabilities related to this version
 
 ### Attacking FTp server
-Let’s take this further and demonstrate an attack on the vulnerable vsFTPd 2.3.4 service. Search Metasploit for an exploit:
+Let’s take this further and demonstrate an attack on the vulnerable vsFTPd 2.3.4 service. This exploit provides us with a shell inside the vulnerable machine, enabling deeper access and control. Search Metasploit for an exploit:
 
 ![image](https://github.com/user-attachments/assets/26f3d679-1598-49a6-a133-8d8c32939e86)
 
