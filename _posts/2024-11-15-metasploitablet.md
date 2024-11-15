@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hacking metasploitable 2 machine with well... Metasploit"
+title: "Hacking Metasploitable 2 Machine with Metasploit"
 author: "Rami Matouk"
 date: 2024-10-25
 categories: projects
