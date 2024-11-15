@@ -15,7 +15,7 @@ Hello! Today, we will experiment with the powerful Metasploit Framework and Meta
 ## What is Metasploit Framework?
 [Metasploit](https://www.metasploit.com/) is a tool created for penetration testing, equipped with an extensive array of payloads, exploits, and scripts. It is widely used by Red Team specialists to simulate attacks and assess the security of systems
 
-For this lab, I am using Kali Linux with a pre-installed Metasploit Framework and a [Metasploitable 2](https://docs.rapid7.com/metasploit/metasploitable-2/) machine to test this tool in action. These two machines are connected within an isolated network. We do not want to expose Metasploitable 2 to the internet, as it is designed to be vulnerable!
+For this lab, I am using Kali Linux with a pre-installed Metasploit Framework and a [Metasploitable-2](https://docs.rapid7.com/metasploit/metasploitable-2/) machine to test this tool in action. These two machines are connected within an isolated network. We do not want to expose Metasploitable 2 to the internet, as it is designed to be vulnerable!
 
 ![image](https://github.com/user-attachments/assets/14bc7d8c-03a6-4761-b182-4c77c3eb5057)
 
