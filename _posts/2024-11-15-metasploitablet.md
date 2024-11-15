@@ -8,64 +8,93 @@ tags: [Metasploit, Red Team]
 ---
 
 
-# Attack Preparation
+# Metasploit in action
 
-Hello, today we will experiment with powerful Metasploit Framework and Metasploitable 2, made to be vulnerable machine.
+Hello! Today, we will experiment with the powerful Metasploit Framework and Metasploitable 2, a deliberately vulnerable virtual machine.
 
 ## What is Metasploit Framework?
-[Metasploit](https://www.metasploit.com/) is a tool created for penetration testing, equipped with powerful array of payloads, exploits and scripts. This tool is used to help Red Team specialist to conduct their attacks.
+[Metasploit](https://www.metasploit.com/) is a tool created for penetration testing, equipped with an extensive array of payloads, exploits, and scripts. It is widely used by Red Team specialists to simulate attacks and assess the security of systems
 
-For this lab i'am using Kali Linux with preinstalled Metasploit and Metasploitable 2 machine which allows us to test this awesome tool in action. These 2 machines are connected together in isolated network. We do not want to expose Metasploitable 2 to internet, this machine is designed to be vulnerable!
+For this lab, I am using Kali Linux with a pre-installed Metasploit Framework and a [Metasploitable 2](https://docs.rapid7.com/metasploit/metasploitable-2/) machine to test this tool in action. These two machines are connected within an isolated network. We do not want to expose Metasploitable 2 to the internet, as it is designed to be vulnerable!
 
 ![image](https://github.com/user-attachments/assets/14bc7d8c-03a6-4761-b182-4c77c3eb5057)
 
-In my testing environment i refer using IP addresses to those machines:
+In my testing environment, I use the following IP addresses:
 - 192.168.1.6 - Kali Linux (attacker)
 - 192.168.1.7 - Metasploitable 2 (victim)
-According to your configuration, these addreses may differ
+Note: Your configuration might use different IP addresses.
 
-## Reconessaince with Metasploit
-Metasploit is equipped with tools to perform recon of our network and gain more information about our victims.
+## Reconnaissance with Metasploit
+Metasploit has built-in tools for network reconnaissance, helping gather information about potential targets.
 
-### Nmap in Metasploit
+### Using Nmap in Metasploit
 
-To begin usage of metasploit we use `sudo msfconsole` command
+To start Metasploit, use the `sudo msfconsole` command:
 
 ![image](https://github.com/user-attachments/assets/5fbfe0b5-9061-4c8e-aef7-5a538262b114)
 
-`msf6 >` confirms that metasploit is working.
+The prompt `msf6 >` confirms that Metasploit is running.
 
-Now we can scan our network for victims with `nmap`, yes we can use nmap in Metasploit Framework.
+To scan the network, we can use nmap directly within Metasploit:
 ```nmap -O <your-network>```
 
 ![image](https://github.com/user-attachments/assets/1143a876-dc19-40f0-a8f2-e091a9550a91)
 
-We found machine with 192.168.1.7 address, and we can notice that it's running a lot of services. We can use nmap with flag `-sV` to extract more information about this host
+We discover a machine with the IP address 192.168.1.7, running multiple services. To get more detailed information, use the `-sV` flag:
 
 ![image](https://github.com/user-attachments/assets/084edb5d-cb68-432b-a36f-0b2b186b2777)
 
-Now we extracted even more information, especially about service version, this is especially useful for finding potential vulnerabilities to exploit.
+This provides valuable information about the versions of services running on the target, which is essential for identifying vulnerabilities.
 
 ### Portscan module
-You can use `search` function inside framework to search for modules. We are interested in portscan module
+To find relevant modules in Metasploit, use the `search` function. For example, to find port scanning tools:
 
 ![image](https://github.com/user-attachments/assets/5435d8d0-cae9-4f99-8225-8a49b211965d)
 
-We will use **TCP SYN Port Scanner** for our task. To select module write `use [nr]`. After selection use `show options` command to print out settings of this module on terminal. Additionaly if you are interested you can use `info` command to view full module information
+For this task, we’ll use the TCP SYN Port Scanner module. Select it by typing `use [module_number]`, then use `show options` to see its configuration. The info command provides full module details.
 
 ![image](https://github.com/user-attachments/assets/fbaab1e9-357a-491f-80e1-3b1b8310a975)
 
-RHOSTS is a name of setting that describes target of this module, we must specify this setting by using `set RHOSTS`. Set command only works in this particular module. It's worth noting that using command `setg` allows us to set parameter for different modules aswell. 
+Set the RHOSTS parameter (target IP) with 
+```set RHOSTS <target_ip>```
+Note: `setg` can be used to set parameters globally across multiple modules.
 
 ![image](https://github.com/user-attachments/assets/86c52691-096d-4210-ae0c-c9b031aa5804)
 
-Additionaly you can set THREADS to something like 10 to speed up scanning process, at the cost of visibility
-
-Now to run exploit we just write `run` or `exploit`.
+Optionally, adjust `THREADS` to speed up scanning at the cost of stealth.
+Run the scan with `run` or `exploit`:
 
 ![image](https://github.com/user-attachments/assets/cda95b80-b730-489e-b128-18ed0573c174)
 
-From this  command we extract similiar information like with Nmap, we see opened ports but because we are just using SYN scan we are unable to determine type and version of service, we can only guess by number of port.
+This provides similar results to nmap, identifying open ports. Note that with a SYN scan, only TCP SYN packets are sent. The victim responds with a SYN/ACK, signaling an open port without fully establishing a connection.
 
-SYN scan sends only TCP SYN packets, victim answers with SYN/ACK packet and waits for us to send ACK packet to complete TCP connection, however we only send SYN packet to specific port, receive SYN/ACK and flag this port as open
+## How to perform a Basic Attack
+To conduct a basic attack, you need to know:
+1. The service version.
+2. The vulnerabilities associated with that version.
+This process is a common starting point for attackers who do not develop new exploits but use existing ones. We can find vulnerabilites [here](https://www.exploit-db.com/)
 
+### Version scanning
+Start by searching for a module that can identify service versions. For example, to target an FTP server `search ftp version scanner`
+
+![image](https://github.com/user-attachments/assets/b0b34907-8967-49a7-8319-aaef20900138)
+
+![image](https://github.com/user-attachments/assets/35fb4854-a399-481e-a9af-80cabee4c9b1)
+
+We see that the target is running vsFTPd 2.3.4. Next, we search for any known vulnerabilities related to this version
+
+### Attacking FTp server
+Let’s take this further and demonstrate an attack on the vulnerable vsFTPd 2.3.4 service. Search Metasploit for an exploit:
+
+![image](https://github.com/user-attachments/assets/26f3d679-1598-49a6-a133-8d8c32939e86)
+
+![image](https://github.com/user-attachments/assets/c6e4d09a-5406-471e-b36f-6c4e6942750a)
+
+Configure the necessary parameters and launch the exploit:
+
+![image](https://github.com/user-attachments/assets/9830ce16-c0ff-4367-bb70-51d811e7d07f)
+
+Success! I was able to read a secret message on the target machine.
+
+
+Feel free to explore and experiment with other services on Metasploitable 2—many of them have known vulnerabilities. Happy hacking and stay safe!
