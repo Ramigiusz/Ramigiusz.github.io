@@ -7,7 +7,6 @@ categories: guides
 tags: [piramid of pain]
 ---
 
-# TryHackMe Summit
 Can you chase a simulated adversary up the Pyramid of Pain until they finally back down?
 
 👉 [Summit](https://tryhackme.com/r/room/summit)
