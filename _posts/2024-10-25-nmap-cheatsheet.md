@@ -3,7 +3,7 @@ layout: post
 title: "Nmap for begineers + Cheatsheet"
 author: "Rami Matouk"
 date: 2024-10-29
-categories: guides
+categories: guide
 tags: [Nmap, cybersecurity, networking]
 ---
 
