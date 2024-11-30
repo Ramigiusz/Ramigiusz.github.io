@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/0e0dd981-6d30-46ce-97a9-99bde3ec33ce)---
+---
 layout: post
 title: "Phising Email Analysis"
 author: "Rami Matouk"
