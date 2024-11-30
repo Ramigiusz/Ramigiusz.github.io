@@ -2,8 +2,8 @@
 layout: post
 title: "Phising Email Analysis"
 author: "Rami Matouk"
-date: 2024-11-15
-categories: Social Engineering
+date: 2024-11-30
+categories: "social engineering"
 tags: [Social Engineering, Phising]
 ---
 
