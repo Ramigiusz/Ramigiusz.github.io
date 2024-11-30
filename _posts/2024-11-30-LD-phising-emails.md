@@ -35,6 +35,7 @@ When investigating a phishing email, it is essential to collect and analyze crit
 - What is the SMTP address?
 - Who is the sender?
 - Who is the recipient?
+- Device Action - allowed or blocked?
 - Does the email content appear malicious?
 - Are there any attachments? If so, are they malicious?
 
@@ -45,9 +46,10 @@ This data collection process helps determine the legitimacy of an email and whet
 
 We received an alert labeled "SOC120 - Phishing Mail Detected - Internal to Internal". Our task is to investigate this potential threat. As previously mentioned, we need to collect crucial data about the email. Based on the alert overview, here’s what we know so far:
 1. When was the email sent? - Feb, 07, 2021, 04:24 AM
-2. What is the SMTP address? - 172.16.20.3
+2. What is the SMTP address? - 172.16.20.3 <- Internal IP address
 3. Who is the sender? - john@letsdefend.io
 4. Who is the recipient? - susie@letsdefend.io
+5. Action - Allowed
 
 To further analyze the email content and any potential attachments, we need to examine the email itself. I navigated to the Email Security tab in the Let's Defend SOAR environment and searched for emails sent by john@letsdefend.io.
 
@@ -58,9 +60,9 @@ To further analyze the email content and any potential attachments, we need to e
 
 ![image](https://github.com/user-attachments/assets/1ff34442-2063-47c3-b1ff-b7262c81edc3)
 
-5. Does the email content appear malicious?
+6. Does the email content appear malicious?
 Upon inspection, the email content shows that John is inviting Susie on a date. There are no URLs, phishing attempts, or other suspicious indicators in the message
-6. Are there any attachments? If so, are they malicious?
+7. Are there any attachments? If so, are they malicious?
 No, the email contains no attachments.
 
 Based on the information gathered, this email does not appear to be malicious. To confirm, I proceeded to the Case Management section and followed the playbook to validate my findings.
@@ -81,6 +83,44 @@ Based on the information gathered, this email does not appear to be malicious. T
 It turns out my initial assumptions were correct. This was an innocent email with no malicious intent (or so we hope! 😂). This particular case was a straightforward investigation, but it’s important to remain vigilant and follow standard procedures for every alert to ensure nothing suspicious slips through.
 
 ## Investigation 2
+We received another alert, this time labeled "SOC114 - Malicious Attachment Detected - Phishing Alert". Based on the initial analysis, it appears to be a dangerous phishing attempt. Let’s investigate further.
+1. When was the email sent? - Jan, 31, 2021, 03:48 PM
+2. What is the SMTP address? - 49.234.43.39 <- External IP address
+3. Who is the sender? - accounting@cmail.carleton.ca
+4. Who is the recipient? - richard@letsdefend.io
+5. Action - The email was allowed to pass through.
 
+### Email Analysis
+I navigated to the Email Security tab in the Let's Defend SOAR environment and searched for emails sent by accounting@cmail.carleton.ca.
 
-By carefully examining these elements, we can better protect ourselves and our organizations from phishing attacks. Stay vigilant, and always verify the authenticity of emails before taking any action. Good luck hunting!
+6. Does the email content appear malicious?
+The email is suspicious due to its overly simplistic message, which often characterizes phishing attempts.
+A VirusTotal scan of the sender's IP address flagged it as suspicious:
+
+![image](https://github.com/user-attachments/assets/80da3a9f-df15-4b22-9a1d-a5fb12917f10)
+
+7. Are there any attachments? If so, are they malicious?
+The email contains an attachment. The attachment was analyzed using Hybrid Analysis and identified as malicious. It exploits CVE-2017-11882, a vulnerability in Microsoft Office Service Packs.
+
+![image](https://github.com/user-attachments/assets/ffb96cc9-9239-4f8d-a476-e21fea7d1cb8)
+
+VirusTotal also highlighted related indicators, such as IP addresses and malicious websites that the malware connects to:
+
+![image](https://github.com/user-attachments/assets/4a19df3a-966b-4467-8b18-914de9325731)
+
+### Action Taken:
+This investigation confirms that the email is malicious. Since it was allowed to pass through the system, immediate remediation steps are required:
+1. Email removal: The email must be deleted from the recipient’s mailbox to prevent further risk.
+2. User Activity Analysis
+Under the Endpoints tab, I discovered that the user's device accessed one of the malicious websites, indicating they likely opened the attachment:
+
+![image](https://github.com/user-attachments/assets/6ce534a8-0cd2-452a-8da4-a9758914cd1c)
+
+The user’s endpoint is confirmed to be infected and must be contained immediately to prevent lateral movement within the network.
+
+With all the data collected, I documented the findings and proceeded to close the alert after completing all the required actions:
+
+![image](https://github.com/user-attachments/assets/8f880913-71e0-4ae8-b623-a38131f36026)
+
+### Conclusion
+This investigation highlights the critical nature of responding to phishing alerts promptly. Despite the email bypassing initial filters, proper monitoring, analysis, and response allowed us to mitigate the threat before further damage occurred.
