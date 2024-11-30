@@ -118,6 +118,8 @@ Under the Endpoints tab, I discovered that the user's device accessed one of the
 
 The user’s endpoint is confirmed to be infected and must be contained immediately to prevent lateral movement within the network.
 
+![image](https://github.com/user-attachments/assets/b06a86f2-0b7a-4e68-b90c-3e988415c8dc)
+
 With all the data collected, I documented the findings and proceeded to close the alert after completing all the required actions:
 
 ![image](https://github.com/user-attachments/assets/8f880913-71e0-4ae8-b623-a38131f36026)
