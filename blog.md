@@ -4,22 +4,19 @@ title: Blog
 permalink: /blog/
 ---
 
-# Categories Menu
-{% for category in categories %}
-- [{{ category | capitalize }}](#{{ category }})
-{% endfor %}
-
 # Blog Posts
 
-{% assign categories = site.posts | map: "categories" | uniq %}
+{% assign categories = site.categories | sort %}
+
 {% for category in categories %}
-## {{ category | capitalize }}
-
-{% for post in site.posts %}
-  {% if post.categories == category %}
-- [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%B %d, %Y" }}
-  {% endif %}
-{% endfor %}
-
+  <h2>{{ category | capitalize }}</h2>
+  <ul>
+    {% assign posts_in_category = site.posts | where: "categories", category %}
+    {% for post in posts_in_category %}
+      <li>
+        - [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%B %d, %Y" }}
+      </li>
+    {% endfor %}
+  </ul>
 {% endfor %}
 
