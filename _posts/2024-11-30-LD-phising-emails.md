@@ -11,7 +11,7 @@ tags: [Social Engineering, Phising]
 
 Hello, in this post i will analyse 2 phising email attempts to discover how we can find out wether or not email is malicious. We will use Let's Defend Alerts associated with phising attempts for this task.
 
-## Few word about phising
+## A Few Words About Phishing
 
 Phishing is a type of social engineering attack designed to trick users into performing specific actions, such as:
 - Downloading malicious attachments.
