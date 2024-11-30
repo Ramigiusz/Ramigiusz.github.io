@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Phising Email Analysis"
+title: "Let's Defend - Phising Email Analysis"
 author: "Rami Matouk"
 date: 2024-11-30
 categories: challenge
