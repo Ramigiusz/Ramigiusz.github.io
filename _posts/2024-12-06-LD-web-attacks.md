@@ -96,7 +96,7 @@ SQL Injection provides attackers with significant opportunities:
     - Complex payloads are another sign of automated attacks
 
 Familiarizing yourself with common payloads is essential. For an example list, refer to this repository:
-https://github.com/payloadbox/sql-injection-payload-list
+[SQLi payload list](https://github.com/payloadbox/sql-injection-payload-list)
 
 ### Cross Site Scripting XSS
 ### Command Injection
