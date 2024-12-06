@@ -91,9 +91,9 @@ SQL Injection provides attackers with significant opportunities:
 2. Look for SQL keywords: Be vigilant for keywords such as `INSERT`, `SELECT`, `AND`, `OR`, `WHERE`, `UNION`, `JOIN`, etc.
 3. Identify special characters: Watch for `'`, `--`, `()` and other characters commonly used in injection attacks.
 4. Detect automated SQLi tools:
-  - Tools often include their names in the User-Agent header or payload.
-  - A high number of rapid requests may indicate automation.
-  - Complex payloads are another sign of automated attacks
+    - Tools often include their names in the User-Agent header or payload.
+    - A high number of rapid requests may indicate automation.
+    - Complex payloads are another sign of automated attacks
 
 Familiarizing yourself with common payloads is essential. For an example list, refer to this repository:
 https://github.com/payloadbox/sql-injection-payload-list
