@@ -63,10 +63,10 @@ SELECT * from users WHERE username = 'rami'' AND password = 'rami_password';
 ```
 ![image](https://github.com/user-attachments/assets/071456c6-5f55-4ba6-88dc-19b9d800157a)
 
-This error message reveals critical information to the attacker, confirming the vulnerability. From here, the attacker can craft a malicious payload, such as: `'OR 1=1; -- -`.
+This error message reveals critical information to the attacker, confirming the vulnerability. From here, the attacker can craft a malicious payload, such as: `' OR 1=1 -- -`.
 The resulting query would look like this:
 ``` SQL
-SELECT * from users WHERE username = ''OR 1=1; -- -' AND password = 'rami_password';
+SELECT * from users WHERE username = '' OR 1=1 -- -' AND password = 'rami_password';
 ```
 - The `OR` clause ensures the query evaluates to `true`, even if the username is empty (`''`).
 - `-- -` comments out the rest of the query.
