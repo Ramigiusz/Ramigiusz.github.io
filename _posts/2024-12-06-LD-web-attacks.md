@@ -199,6 +199,41 @@ This payload attempts to extract the /etc/passwd file. The contents of the file 
 By implementing proper sanitization, limiting user privileges, and monitoring for malicious patterns, you can reduce the risk of command injection attacks.
 
 ### Insecure Direct Object Reference (IDOR)
+![image](https://github.com/user-attachments/assets/964733b4-7b6c-431f-ac3f-a9ce7ec3933d)
+
+IDOR, also referred to as "Broken Access Control," is the **#1 web application vulnerability** listed in the 2021 OWASP Top 10.
+
+#### How IDOR Works?
+Consider a simple web application that retrieves a parameter like `id` from the user and displays data for the corresponding user:  
+``` url
+https:/mysite/user?id=1
+```
+When this request is made, the application displays the data for the user with id=1. But what happens if another user modifies the URL to:
+``` url
+https://mysite/user?id=2
+```
+Without proper access controls, the application may display the data of another user. This is a classic example of an IDOR vulnerability, where attackers exploit object references (like id) to access or modify unauthorized data.
+
+Attackers typically exploit IDOR by tampering with parameters such as `id`, `file`, or `order_id` to gain access to restricted resources.
+
+#### How Attackers Take Advantage of IDOR Attacks
+- Steal personal information: Extract sensitive user data like emails, passwords, or payment details.
+- Access unauthorized documents: Retrieve confidential files, such as invoices or private documents.
+- Take unauthorized actions: Perform actions such as deleting or modifying resources belonging to others.
+
+### How to Prevent IDOR?
+- Remove unnecessary parameters: Avoid exposing object references like id in URLs or API requests. Instead, use session data to determine the user making the request.
+- Enforce proper access controls: Validate whether the user is authorized to access or modify the requested object. Ensure that every access is checked at the server level.
+
+Detecting IDOR Attacks
+- Inspect all parameters: Monitor all user-supplied parameters for unusual or malicious attempts to modify values.
+- Look for brute-force patterns: Watch for repeated requests to the same endpoint with sequential or predictable values. This may indicate an attacker trying to enumerate resources (e.g., id=1, id=2, id=3).
+- Identify suspicious patterns: Notice if requests come in with similar structures, particularly if they involve incremental or predictable parameters.
+
+![image](https://github.com/user-attachments/assets/84cb61c1-1cd8-4507-9c93-0b175c4c4593)
+
+By removing unnecessary references and enforcing strict access control mechanisms, IDOR vulnerabilities can be mitigated effectively.
+
 ### RFI and LFI
 ### Open Redirection Attack
 ### Directory Traversal Attacks
