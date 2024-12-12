@@ -98,7 +98,60 @@ SQL Injection provides attackers with significant opportunities:
 Familiarizing yourself with common payloads is essential. For an example list, refer to this repository:
 [SQLi payload list](https://github.com/payloadbox/sql-injection-payload-list)
 
-### Cross Site Scripting XSS
+### **Cross-Site Scripting XSS**
+
+Cross-Site Scripting (XSS) is a type of injection-based web vulnerability where malicious scripts are injected into legitimate web applications, allowing them to execute in a user’s browser. 
+
+#### **3 Types of XSS**
+
+1. **Reflected XSS**:  
+   A non-persistent form of XSS where the malicious payload is included in the request and executed in the response.
+
+2. **Stored XSS**:  
+   A persistent form of XSS where the payload is permanently stored on the web application (e.g., in a database) and executed whenever the relevant data is retrieved.
+
+3. **DOM-Based XSS**:  
+   An XSS attack where the payload is executed by modifying the DOM (Document Object Model) in the victim's browser.
+
+#### **How does XSS work?**
+
+Like many other web vulnerabilities, XSS arises from improper data sanitization. Here’s an example:
+
+![image](https://github.com/user-attachments/assets/5c0d70dd-a70c-4bb8-b46b-216e23663845)
+
+The code above displays the value entered in the `user` parameter without sanitization. If a user inputs `LetsDefend` as the parameter, the output looks like this:  
+
+![image](https://github.com/user-attachments/assets/527efd7d-2ccc-4594-916d-dbddbe13f783)
+
+However, if the user inputs malicious code, such as:  
+```html
+<script>alert(1)</script>
+```
+
+![image](https://github.com/user-attachments/assets/4bc6f9a6-8840-442b-ab2c-62ef27850d38)
+
+The browser executes the JavaScript code, and we get a pop-up window. This lack of sanitization is a common way to test for XSS vulnerabilities. Attackers can also use XSS payloads to redirect victims to malicious websites, for example
+``` Javascript
+<script>window.location=’https://google.com’</script>
+```
+#### What can an attacker achieve with XSS?
+- Steal a user’s session information.
+- Capture user credentials.
+- Redirect victims to malicious websites.
+- Perform other malicious actions.
+
+#### How to Prevent a XSS Vulnerability
+1. Monitor for specific keywords: Look for common XSS payloads with keywords such as alert or script.
+2. Use frameworks and secure them properly: Utilize frameworks with built-in protection against XSS.
+3. Keep frameworks updated: Regularly update frameworks and libraries to address known vulnerabilities.
+
+#### Detecting XSS attack
+- Easiest way to detect XSS is by looking for keywords like `alert` or `script`.
+- Familiarize yourself with payloads: Learn about common XSS payloads from resources like this [repository](https://github.com/payloadbox/xss-payload-list)
+- Look for special characters: Watch for input that includes characters like `<`, `>`, or `()` that could indicate an attempted injection.
+
+With proper sanitization and monitoring, XSS vulnerabilities can be effectively mitigated.
+
 ### Command Injection
 ### Insecure Direct Object Reference (IDOR)
 ### RFI and LFI
