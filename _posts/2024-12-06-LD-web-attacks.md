@@ -153,6 +153,51 @@ The browser executes the JavaScript code, and we get a pop-up window. This lack 
 With proper sanitization and monitoring, XSS vulnerabilities can be effectively mitigated.
 
 ### Command Injection
+![image](https://github.com/user-attachments/assets/e8e6fa88-0cba-4f22-9553-b11b8f9f7f1e)
+
+Command injection attacks occur when unsanitized user input is passed directly to the operating system shell, allowing an attacker to execute arbitrary commands.
+
+#### How does Command Injection work?
+![image](https://github.com/user-attachments/assets/8577942e-ee16-464a-9438-885465909c5f)
+
+Consider a basic web application that copies a user's file to the `/tmp` folder. Normally, this operation works as intended. However, an attacker could exploit this with a malicious filename such as:  `myfile;ls;.txt` The resulting shell command would be:
+``` bash
+cp myfile;ls;.txt
+```
+Here, the ; character separates commands, allowing the attacker to chain multiple commands. For the operating system, this payload executes as:
+1. `cp myfile` – Attempts to copy myfile.
+2. `ls` – Executes the ls command, listing directory contents.
+3. `.txt` – Causes an error since .txt is not a valid command.
+Although some commands (myfile and .txt) generate errors, the valid command (ls) executes successfully. While the attacker may not directly see the output, they could use this vulnerability to achieve more damaging results, such as creating a reverse shell to gain full access to the operating system.
+
+#### How to Prevent Command Injection?
+- Always sanitize data you receive from a user: Never trust anything you receive from a user. Not even a file name!
+- Limit user privileges: Whenever possible, set web application user rights at a lower level. Few web applications require users to have administrator rights. 
+- Use virtualization technologies such as dockers.
+
+#### Detecting Command Injection attacks
+1. Monitor web requests: Examine all parts of incoming requests, such as query parameters, HTTP headers, and POST data.
+2. Look for suspicious keywords: Be on the lookout for commands like dir, ls, cp, cat, type, or other shell-specific commands.
+3. Familiarize yourself with payloads: Learn about common command injection payloads. This will help you identify potential exploits more effectively.
+
+Here’s an example of a suspicious request in your access logs:
+``` http
+GET / HTTP/1.1
+Host: yourcompany.com
+User-Agent: () { :;}; echo "NS:" $(</etc/passwd)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Connection: close
+```
+In this case, the User-Agent header contains a malicious payload:
+``` bash
+() { :;}; echo "NS:" $(</etc/passwd)
+```
+This payload attempts to extract the /etc/passwd file. The contents of the file would be returned to the attacker under the variable NS. Detecting such behavior early is critical to preventing a successful attack.
+
+By implementing proper sanitization, limiting user privileges, and monitoring for malicious patterns, you can reduce the risk of command injection attacks.
+
 ### Insecure Direct Object Reference (IDOR)
 ### RFI and LFI
 ### Open Redirection Attack
